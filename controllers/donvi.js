@@ -1,9 +1,4 @@
 const Donvis = require("../models/Donvis");
-const Canbos = require("../models/Canbo");
-const Chidoans = require("../models/Chidoans");
-const Khenthuongtapthe = require("../models/Khenthuongtapthe");
-const Dois = require("../models/Dois");
-const Users = require("../models/Users");
 
 module.exports = {
   getDonvis: async (req, res) => {

@@ -4,7 +4,6 @@ const router = express.Router();
 
 const auth = require('../controllers/auth');
 const middlewareController = require('../middlewares/verifyToken');
-const checkRole = require('../middlewares/checkRole');
 const authmobile = require('../controllers/authmobile');
 // const middlewareController = require('../middlewares/verifyToken');
 

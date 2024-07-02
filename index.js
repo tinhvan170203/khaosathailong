@@ -41,9 +41,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '50mb'}));
 const port = process.env.port || 3000;
 
 ;
-const roleRoute = require('./routes/role');
 const authRoute = require('./routes/auth');
-const workRoute = require('./routes/work');
 const donviRoute = require('./routes/donvi');
 
 // app.use('/notification', notificationRoute);
@@ -51,21 +49,20 @@ const donviRoute = require('./routes/donvi');
 app.use('/don-vi', donviRoute);
 // app.use('/role', roleRoute);
 app.use('/auth', authRoute);
-app.use('/work', workRoute);
 const path = require("path");
 const basePath = '';
 
 
-// //cấu hình chạy reactjs trên node server
-// app.use(basePath + "/", express.static(path.resolve(__dirname + "/dist")));
+//cấu hình chạy reactjs trên node server
+app.use(basePath + "/", express.static(path.resolve(__dirname + "/dist")));
 
 
-// app.get("*", (request, response) => {
-//   response.sendFile(path.resolve(__dirname + "/dist/index.html"));
-// });
+app.get("*", (request, response) => {
+  response.sendFile(path.resolve(__dirname + "/dist/index.html"));
+});
 // app.listen(port, '10.19.4.6', () => {
-  //     console.log('server running ', port)
-  // });
+//       console.log('server running ', port)
+//   });
   
   // let usersOnline = [];
   // io.on('connection', function(socket){
@@ -91,12 +88,12 @@ const basePath = '';
   //       })
   //   })
 
-httpServer.listen(port,'192.168.70.128', () => {
+httpServer.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
   });
 
 mongoose.set('strictQuery', true);
-mongoose.connect("mongodb://localhost:27017/khaosathailong",{
+mongoose.connect("mongodb+srv://vuvantinh121123:Tv170203@cluster0.owmvemg.mongodb.net/",{
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, (err) => {

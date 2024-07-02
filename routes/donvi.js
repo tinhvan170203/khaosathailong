@@ -1,7 +1,6 @@
 const express = require('express');
 
 const router = express.Router();
-const checkRole = require('../middlewares/checkRole');
 const middlewareController = require('../middlewares/verifyToken');
 const donvi = require('../controllers/donvi');
 
